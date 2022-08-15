@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Diagrama de proveniência da COMPOSITION{% endblock %}
+
+{% block header %}
+    <h1>Diagrama de proveniência da COMPOSITION</h1>
+{% endblock %}
+
+{% block body %}
+    <h2>
+        EHR {{ ehr_id }} / Composition {{ composition_id }}
+    </h2>
+    <h3>
+        Diagrama de proveniência do EHR_STATUS
+    </h3>
+    <div>
+        <img src="/ehrs/{{ ehr_id }}/compositions/{{ composition_id }}/prov_diagram.png">
+    </div>
+
+    <div>
+        <a href="/ehrs/{{ ehr_id }}/compositions/{{ composition_id }}/history">
+            Exibir versões da COMPOSITION
+        </a>
+    </div>
+    <div>
+        <a href="/ehrs/{{ ehr_id }}">
+            Voltar ao EHR
+        </a>
+    </div>
+
+{% endblock %}

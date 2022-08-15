@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+    <title>Mestrado Thayse - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}" />
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href='/'>Home</a></li>
+            <li><a href='/ehrs'>Lista de EHRs</a></li>
+            <li><a href='/patients'>Lista de pacientes</a></li>
+            <li><a href='/templates'>Lista de templates</a></li>
+      </ul>
+    </nav>
+    <br>
+    <br>
+    {% block header %}{% endblock %}
+    <hr>
+    {% block body %}{% endblock %}
+    <hr>
+    <small>Feito por Thayse Marques Solis.</small>
+</body>

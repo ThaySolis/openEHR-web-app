@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Dados de um EHR{% endblock %}
+
+{% block header %}
+    <h1>Dados de um EHR</h1>
+{% endblock %}
+
+{% block body %}
+    <h1>Metadados</h1>
+    <table class="simpleBorder">
+        <tr>
+            <th>Dado</th>
+            <th>Valor</th>
+        </tr>
+
+        <tr>
+            <td>Data de criação</td>
+            <td>{{ time_created }}</td>
+        </tr>
+        <tr>
+            <td>ID da última versão do EHR_STATUS</td>
+            <td>{{ uid }}</td>
+        </tr>
+        <tr>
+            <td>É buscável?</td>
+            <td>{{ is_queryable }}</td>
+        </tr>
+        <tr>
+            <td>É modificável?</td>
+            <td>{{ is_modifiable }}</td>
+        </tr>
+        <tr>
+            <td>Arquétipo</td>
+            <td>{{ archetype_node_id }}</td>
+        </tr>        
+    </table>
+    <br>
+    <div>
+        <a href="/ehrs/{{ ehr_id }}/ehr_status/history">
+            Obter informações das versões do EHR_STATUS
+        </a>
+    </div>
+    <div>
+        <a href="/ehrs/{{ ehr_id }}/ehr_status/prov">
+            Exibir diagrama de proveniência do EHR_STATUS
+        </a>
+    </div>
+    <div>
+        <a href="/ehrs/{{ ehr_id }}/compositions">
+            Obter informações das compositions
+        </a>
+    </div>
+{% endblock %}

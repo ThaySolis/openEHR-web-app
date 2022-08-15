@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Diagrama de proveniência do paciente{% endblock %}
+
+{% block header %}
+    <h1>Diagrama de proveniência do paciente</h1>
+{% endblock %}
+
+{% block body %}
+    <h2>
+        Paciente {{ patient_id }}
+    </h2>
+    <h3>
+        Diagrama de proveniência do paciente
+    </h3>
+    <div>
+        <img src="/patients/{{ patient_id }}/prov_diagram.png">
+    </div>
+
+    <div>
+        <a href="/patients/{{ patient_id }}">
+            Voltar ao paciete
+        </a>
+    </div>
+    {% endblock %}

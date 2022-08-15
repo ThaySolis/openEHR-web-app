@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Diagrama de proveniência do EHR_STATUS{% endblock %}
+
+{% block header %}
+    <h1>Diagrama de proveniência do EHR_STATUS</h1>
+{% endblock %}
+
+{% block body %}
+    <h2>
+        EHR {{ ehr_id }}
+    </h2>
+    <h3>
+        Diagrama de proveniência do EHR_STATUS
+    </h3>
+    <div>
+        <img src="/ehrs/{{ ehr_id }}/ehr_status/prov_diagram.png">
+    </div>
+
+    <div>
+        <a href="/ehrs/{{ ehr_id }}">
+            Voltar ao EHR
+        </a>
+    </div>
+    {% endblock %}

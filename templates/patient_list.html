@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de pacientes{% endblock %}
+
+{% block header %}
+    <h1>Lista de pacientes</h1>
+{% endblock %}
+
+{% block body %}
+    <table class="simpleBorder">
+        <tr>
+            <th>Id do paciente</th>
+            <th>Detalhes</th>
+        </tr>
+        {% for patient_id in patient_ids %}
+            <tr>
+                <td>{{ patient_id }}</td>
+                <td>
+                    <a href="/patients/{{ patient_id }}">
+                        Mais detalhes
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

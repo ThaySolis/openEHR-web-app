@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Versões do paciente{% endblock %}
+
+{% block header %}
+    <h1>Versões do paciente</h1>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h2>
+            Id do paciente: {{ patient_id }}
+        </h2>
+    </div>
+    {% for patient_history_item in patient_history %}
+        <div>
+            ID da versão: {{ patient_history_item["version_id"] }}
+            <ul>
+                <li>Contribution {{ patient_history_item["contribution_id"] }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        <a href="/patients/{{ patient_id }}">
+            Voltar ao paciente
+        </a>
+    </div>
+
+{% endblock %}

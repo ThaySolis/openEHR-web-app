@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Templates{% endblock %}
+
+{% block header %}
+    <h1>Templates</h1>
+{% endblock %}
+
+{% block body %}
+    <table class="simpleBorder">
+        <tr>
+            <th>Template</th>
+            <th>ID</th>
+            <th>Archetype_id</th>
+        </tr>
+        {% for template in templates %}
+            <tr>
+                <td>{{ template[0] }}</td>
+                <td>{{ template[1] }}</td>
+                <td>{{ template[2] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

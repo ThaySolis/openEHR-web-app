@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Dados de um paciente{% endblock %}
+
+{% block header %}
+    <h1>Dados de um paciente</h1>
+{% endblock %}
+
+{% block body %}
+    <h1>Metadados</h1>
+    <table class="simpleBorder">
+        <tr>
+            <th>Dado</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>Data de criação</td>
+            <td>{{ time_created }}</td>
+        </tr> 
+    </table>
+    <br>
+    <div>
+        <a href="/patients/{{ patient_id }}/history">
+            Obter informações das versões do paciente
+        </a>
+    </div>
+    <div>
+        <a href="/patients/{{ patient_id }}/prov">
+            Obter diagrama de proveniência
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Versões do EHR_STATUS{% endblock %}
+
+{% block header %}
+    <h1>Versões do EHR_STATUS</h1>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h2>
+            EHR id: {{ ehr_id }}
+        </h2>
+    </div>
+    {% for ehr_status_history_item in ehr_status_history %}
+        <div>
+            EHR_STATUS version id: {{ ehr_status_history_item["version_id"] }}
+            <ul>
+                <li>contribution {{ ehr_status_history_item["contribution_id"] }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        <a href="/ehrs/{{ ehr_id }}">
+            Voltar ao EHR
+        </a>
+    </div>
+
+{% endblock %}

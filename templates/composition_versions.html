@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Versões da composition{% endblock %}
+
+{% block header %}
+    <h1>Versões da composition</h1>
+{% endblock %}
+
+{% block body %}
+    <h2>EHR id: {{ ehr_id }}</h2>
+        <h3>Composition id: {{ composition_id }}</h3>
+    <br>
+    {% for composition_history_item in composition_history %}
+        <div>
+            Versão {{ composition_history_item["version_id"].split("::")[2] }} (criada em: {{ composition_history_item["version_id"].split("::")[1] }})
+            <ul>
+                <li>Contribution: {{ composition_history_item["contribution_id"] }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+
+    <div>
+        <a href="/ehrs/{{ ehr_id }}/compositions/{{ composition_id }}/prov">
+            Exibir diagrama de proveniência da COMPOSITION
+        </a>
+    </div>
+    <div>
+        <a href="/ehrs/{{ ehr_id }}">
+            Voltar ao EHR
+        </a>
+    </div>
+
+{% endblock %}
